@@ -9,7 +9,6 @@ import "dotenv/config";
 import * as cors from "cors";
 import { sendEmail } from "./lib/sendgrid";
 import { createPetAlgolia, updatePetAlgolia, deletePetAlgolia, searchPetsAround, index } from "./lib/algolia";
-import { ExclusionConstraintError } from "sequelize/dist";
 
 const app = express();
 app.use(cors());

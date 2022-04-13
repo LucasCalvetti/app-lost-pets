@@ -1,0 +1,7 @@
+server-dist
+.env
+dist
+.parcel-cache
+node_modules
+yarn.lock
+sync.ts

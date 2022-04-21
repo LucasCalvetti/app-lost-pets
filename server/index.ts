@@ -105,6 +105,7 @@ app.post("/user/pet", authMiddleware, async (req: any, res) => {
             const newPet: any = await createPet(req.body, user_id);
             if (newPet.petCreated == true) {
                 const newPetInAlgolia = await createPetAlgolia(newPet.pet.dataValues);
+
                 if (newPetInAlgolia.error) {
                     res.status(500).json(newPetInAlgolia.error);
                 }

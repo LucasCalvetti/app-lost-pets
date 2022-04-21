@@ -16,6 +16,7 @@ function petDataToAlgoliaIndexData(petData, petId?: number) {
     if (petId || petData.id) {
         formatedPetData.objectID = petId || petData.id;
     }
+
     return formatedPetData;
 }
 
@@ -26,10 +27,7 @@ export async function createPetAlgolia(petData) {
         const createdPet = index.saveObject({
             objectID: formatedPetData.objectID,
             petName: formatedPetData.petName,
-            _geoloc: {
-                lat: formatedPetData.lat,
-                lng: formatedPetData.lng,
-            },
+            _geoloc: formatedPetData._geoloc,
         });
         return createdPet as any;
     } catch (error) {

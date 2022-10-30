@@ -2,7 +2,7 @@ import { User, Auth } from "../models";
 import * as crypto from "crypto";
 import * as jwt from "jsonwebtoken";
 
-function validateEmail(email) {
+function validateEmail(email: string) {
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
         return true;
     }

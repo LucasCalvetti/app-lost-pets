@@ -10,14 +10,15 @@ function getSHA256OfString(text: string) {
 //signIn
 export async function signIn(email: string, password: string) {
     const passwordHashed = getSHA256OfString(password);
-    const auth = await Auth.findOne({
-        where: { email, password: passwordHashed },
-    });
-
-    const token = jwt.sign({ id: auth.get("user_id") }, process.env.SECRET_TEXT);
-    if (auth) {
-        return token;
-    } else {
+    try {
+        const auth = await Auth.findOne({
+            where: { email, password: passwordHashed },
+        });
+        const token = jwt.sign({ id: auth.get("user_id") }, process.env.SECRET_TEXT);
+        if (auth) {
+            return token;
+        }
+    } catch (error) {
         throw { error: "Email o Contraseña incorrecto" };
     }
 }

@@ -59,8 +59,9 @@ app.post("/user/auth/token", async (req, res) => {
         const { email, password } = req.body;
         const token = await signIn(email, password);
         res.status(200).json({ token, access: true });
-    } catch (e) {
-        res.status(401).send({ e, access: false });
+    } catch (error) {
+        error.access = false;
+        res.status(401).send(error);
     }
 });
 
@@ -103,6 +104,7 @@ app.post("/user/pet", authMiddleware, async (req: any, res) => {
         const user_id = req._user.id;
         if (req.body.petName && req.body.petImg && req.body.lng && req.body.lat && req.body.location && req.body.description) {
             const newPet: any = await createPet(req.body, user_id);
+
             if (newPet.petCreated == true) {
                 const newPetInAlgolia = await createPetAlgolia(newPet.pet.dataValues);
 

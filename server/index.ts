@@ -79,7 +79,7 @@ app.get("/user/profile", authMiddleware, async (req: any, res) => {
 
 app.patch("/user/profile", authMiddleware, async (req: any, res) => {
     const { id } = req._user;
-    if (!req.body.email || !req.body.fullName || !req.body.password) {
+    if (!req.body.email || !req.body.fullName) {
         res.status(400).send({ error: "Missing email or fullName in body." });
     }
     const { email, fullName, password } = req.body;

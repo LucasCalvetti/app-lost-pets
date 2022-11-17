@@ -69,7 +69,7 @@ export async function getUserProfile(userId: number) {
     }
 }
 
-export async function updateUserProfile(userId: number, email: string, fullName: string, password: string) {
+export async function updateUserProfile(userId: number, email: string, fullName: string, password?: string) {
     if (validateEmail(email) == false) {
         const error = "Error: invalid email format.";
 

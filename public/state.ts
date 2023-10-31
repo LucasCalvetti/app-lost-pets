@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 //const API_URL = "http://localhost:3004";
-const API_URL = "https://pet-finder-app-apx.herokuapp.com";
+const API_URL = "https://lost-pets-app-9zfk.vercel.app";
 
 const state = {
     data: {

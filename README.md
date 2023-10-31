@@ -50,7 +50,7 @@ Mapbox
 Dropzone
 
 * En el DEPLOY
-Heroku - Deploy
+* Vercel - Deploy
 
 CI (Continuos Integration)
 

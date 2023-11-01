@@ -11,9 +11,9 @@ import { sendEmail } from "./lib/sendgrid";
 import { createPetAlgolia, updatePetAlgolia, deletePetAlgolia, searchPetsAround, index } from "./lib/algolia";
 
 const app = express();
-app.use(cors());
 app.use(express.json());
 app.use(express.json({ limit: "50mb" }));
+app.use(cors());
 app.use(express.urlencoded({ limit: "50mb", extended: false, parameterLimit: 50000 }));
 
 const port = process.env.PORT || 3004;

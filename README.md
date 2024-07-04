@@ -1,11 +1,12 @@
 # app-mascotas-perdidas
-Web app: https://lost-pets-app-with-react-9zfk.vercel.app/
+
+Web app: https://pet-finder-8bul.onrender.com
 
 API documentation in Postman: https://documenter.getpostman.com/view/17225834/Uyr7JekP
 
 En esta web app se utilizó e implemento las siguientes tecnologías y prácticas:
 
-* En el BACKEND
+- En el BACKEND
 
 MVC
 
@@ -25,7 +26,7 @@ Env Vars
 
 TypeScript
 
-* En el FRONTEND
+- En el FRONTEND
 
 SPA
 
@@ -49,11 +50,9 @@ Mapbox
 
 Dropzone
 
-* En el DEPLOY
-* Vercel - Deploy
+- En el DEPLOY
+- Vercel - Deploy
 
 CI (Continuos Integration)
 
-* En el testeado de los endpoints y DOCUMENTACIÓN
-
-Postman
+- En el testeado de los endpoints y DOCUMENTACIÓN
